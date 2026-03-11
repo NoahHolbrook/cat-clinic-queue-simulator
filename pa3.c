@@ -26,14 +26,10 @@ void freeQueue(SLLNode *head);
 void freeListOnly(SLLNode *head);
 
 
-// BEGIN: DO NOT MODIFY THE MAIN FUNCTION
+
 #ifndef MAIN_FUNCTION
 int main(void) {
-    // Open the input file for reading.
-    // This is the only part of the entire code where the file
-    // is going to be opened. You should not have any
-    // fopen() function call in your functions. Simply
-    // pass this existing FILE pointer when necessary.
+   
     FILE *ifile = fopen(INPUT_FILE, "r");
 
     if( ifile == NULL ) {
@@ -41,7 +37,7 @@ int main(void) {
         return 1;
     }
 
-    // Calls your own main function and passes the file stream
+
     myMain(ifile);
 
     // Close the file
@@ -50,10 +46,10 @@ int main(void) {
     return 0;
 }
 #endif
-// END: DO NOT MODIFY THE MAIN FUNCTION
 
 
-// Creates a new SLLNode wrapping the given Cat pointer
+
+
 SLLNode *createNode(Cat *cat) {
     SLLNode *node = malloc(sizeof(SLLNode));
     node->cat = cat;
@@ -62,7 +58,7 @@ SLLNode *createNode(Cat *cat) {
 }
 
 // Inserts a cat into the sorted linked list (ordered by arrival time)
-// No sorting algorithm used — each node is placed immediately in position
+
 void insertSorted(SLLNode **head, Cat *cat) {
     SLLNode *newNode = createNode(cat);
 
